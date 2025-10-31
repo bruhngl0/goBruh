@@ -11,6 +11,8 @@ import (
 	"github.com/labstack/echo/v4"
 )
 
+// we have implemented an interface here,so that whatever struct, data type in our application which has a reciver method Validate(), that will satistfy our this interface automatiacally
+// this is very important because as we write our dto's (data transfer objects), we will have to validate on the top of those dto's so we can run our validation logic on those dto's
 type Validatable interface {
 	Validate() error
 }

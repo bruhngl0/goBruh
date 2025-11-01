@@ -1,13 +1,19 @@
 package handler
 
-import "github.com/bruhngl0/goBruh/internal/server"
+import (
+	"github.com/bruhngl0/goBruh/internal/server"
+	"github.com/bruhngl0/goBruh/internal/service"
+)
 
 type Handlers struct {
-	server *server.Server
+	Health  *HealthHandler
+	OpenAPI *OpenAPIHandler
 }
 
-func NewHandlers(s *server.Server) *Handler {
+func NewHandlers(s *server.Server, services *service.Services) *Handlers {
+
 	return &Handlers{
-		server: s,
+		Health:  NewHealthHandler(s),
+		OpenAPI: NewOpenAPIHandler(s),
 	}
 }

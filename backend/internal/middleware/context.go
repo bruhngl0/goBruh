@@ -11,7 +11,7 @@ import (
 )
 
 const (
-	UserIDkey = "user_id"
+	UserIDKey = "user_id"
 	UserRole  = "user_role"
 	LoggerKey = "logger"
 )
